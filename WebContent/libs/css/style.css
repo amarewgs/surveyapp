@@ -1,0 +1,631 @@
+.footer {
+/*   border-top-color:#E5E5E5; */
+/*   border-top-style:solid; */
+/*   border-top-width:5px; */
+/*   margin-top:45px; */
+/*   padding:35px 0 36px; */
+}
+
+h1, h2, ul {
+    /*clear: both;*/
+}
+/* ul.paging li, ul.paging2 li {
+    padding: 10px;
+    background: #83bd63;
+    font-family: georgia;
+    font-size: 24px;
+    color: #fff;
+    line-height: 1;
+    width: 180px;
+    margin-bottom: 1px;
+} */
+ul.red {
+    outline:10px solid red;
+}
+ul.simplePagerNav li {
+    display:block;
+    floaT: left;
+    padding: 3px;
+    margin-bottom: 10px;
+    font-family: georgia;
+}
+ul.simplePagerNav li a {
+    color: #333;
+    text-decoration: none;
+}
+li.currentPage {
+    background: red;
+    background: #83bd63;
+}
+ul.simplePagerNav li.currentPage a {
+    color: #fff;
+}
+table.pageme {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+table.pageme td {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+.pg-normal {
+                color: black;
+                font-weight: normal;
+                text-decoration: none;    
+                cursor: pointer;    
+            }
+            .pg-selected {
+                color: black;
+                font-weight: bold;        
+                text-decoration: underline;
+                cursor: pointer;
+            }
+.pagewrapper form fieldset span.required, .pagewrapper form fieldset a.submit_button {
+margin-left : 15px;
+}
+a.submit_button {
+padding: 0;
+text-decoration: none;
+color: #FFFFFF;
+}
+a.submit_button:hover {
+text-decoration: none;
+}
+a.submit_button span.leftcap {
+background-position: 0 0;
+text-decoration: none;
+}
+a.submit_button span {
+background-image: url("/pls/portal/docs/PAGE/pme/Beheer/img/bg_button.png");
+background-repeat: no-repeat;
+cursor: pointer;
+float: left;
+height: 30px;
+overflow: hidden;
+width: 14px;
+}
+a.submit_button span.middle {
+background-position: 0 -39px;
+background-repeat: repeat-x;
+font-weight: bold;
+height: 30px;
+padding: 5px 0 0;
+white-space: nowrap;
+width: auto;
+}
+a.submit_button span.rightcap {
+background-position: 0 -79px;
+text-decoration: none;
+}
+a.submit_button:hover span.middle,
+a.submit_button span.middle:hover {
+background-position: 0 -157px;
+text-decoration: none;
+}
+a.submit_button:hover span.leftcap,
+a:hover .submit_button span.leftcap {
+background-position: 0 -118px;
+text-decoration: none;
+}
+a.submit_button:hover span.rightcap,
+a:hover .submit_cover span.rightcap {
+background-position: 0 -197px;
+text-decoration: none;
+}
+/**********************************************************************/
+fieldset{
+	border:none;
+}
+div.f1_header form.zoeken fieldset {
+  border: none;
+}
+img {
+  border: none;
+}
+div.f6_nieuwslijst ul li {
+	padding: 5px 0;
+}
+ul.tabs li a:hover {
+  text-decoration: none;
+}
+#f14_nieuwsoverzicht div.tabcontainer div ul.nieuwsoverzicht li {
+  width: 100%;
+}
+.pagewrapper ul li {
+	margin:0;
+	line-height: 1.1em;
+}	
+/* Xopus layout */
+table.color_blue                       { background-color:#D2DFF6; }
+.color_blue  th                         { background-color:#8FB5FB; color:#0258F5; }
+.color_blue  tbody.rowcoloring_alternate  tr.evenorodd_even    { background-color:#FFFFFF; }
+table.color_green                     { background-color:#F2F6E0; }
+.color_green th                        { background-color:#EAF1BE; color:#619102; }
+.color_green tbody.rowcoloring_alternate  tr.evenorodd_even    { background-color:#FFFFFF; }
+table.color_orange                   { background-color:#F8EAE1; }
+.color_orange th                      { background-color:#F6B88E; color:#F86401; }
+.color_orange tbody.rowcoloring_alternate tr.evenorodd_even    { background-color:#FFFFFF; }
+table.color_grey                      { background-color:#ECECEC; }
+.color_grey th                         { background-color:#D9D9D9; color:#666666; }
+.color_grey tbody.rowcoloring_alternate   tr.evenorodd_even    { background-color:#FFFFFF; }
+table.border_row    th,
+table.border_row    td              { border-bottom:solid 1px #CCCCCC; }
+table.border_column th,
+table.border_column td           { border-right:solid 1px #CCCCCC; }
+table.border_cell                  { border:solid #CCCCCC; border-width:1px 0px 0px 1px; }
+table.border_cell   th,
+table.border_cell   td            { border:solid #CCCCCC; border-width:0px 1px 1px 0px; }
+/*Pager layout (voor nieuws) */
+ul.simplePagerNav {
+	color:#CCCCCC;
+	font-size:0.917em;
+	line-height:1.636em;
+	text-align:center;
+	white-space:nowrap;
+	padding:15px 0 !important;
+}
+ul.simplePagerNav li{
+	background:transparent none repeat scroll 0 0;
+	border:medium none;
+	display:inline !important;
+	margin:0;
+	overflow:visible;
+	padding:0;
+	width:auto;
+	line-height:1.3em;
+	/*padding-left:10px;*/
+	padding: 0px 5px;
+}
+ul.simplePagerNav li a{ 
+    text-decoration: none;	
+	border:1px solid #E6E6E6;
+	color:#003145;
+	padding:3px 5px;
+}
+ul.simplePagerNav li.currentPage {	
+	/*border:1px solid #E6E6E6;*/
+	color:#FFFFFF;
+	margin:0;
+	padding:3px 5px;
+}
+ul.simplePagerNav li.currentPage a {
+	background:#DF7A00 none repeat scroll 0 0;
+}
+div.begrippenlijst div.letters a.active{
+	font-size: 15px;
+    font-style: italic;    
+}
+/* contact formulieren */
+h3.contact{
+	background:transparent url(/pls/portal/docs/PAGE/pme/Beheer/img/bg_form_title.png);	
+}
+.contact form fieldset input, .contact form fieldset textarea, .contact form fieldset select {
+	margin:0px;
+}
+#contact_form span.error {
+	color:red;
+	font-size:9px;
+}
+/* F17 Downloads */
+#download_tab td {
+  padding: 3px;
+  width: 170px;
+}
+#post_form  {
+	display: none;
+}
+#post_form ul {
+	list-style-type: none;
+}
+li.post_li {
+	list-style-type: none;
+}
+#post_form ul li {
+  background:transparent none repeat scroll 0 0;
+  overflow:hidden;
+  padding:0;
+  background:transparent url(../siteimg/rightcol_listitem.png) no-repeat scroll left 0.6em;
+  line-height:1.3em;
+  margin:0 0 1em;
+}
+div.f17_downloads form fieldset label, p.label {
+  margin: 0;
+} 
+div.f17_downloads form fieldset .field_half {
+	width: 135px !important;
+}
+.post form fieldset input, .post form fieldset textarea, .post form fieldset select {
+	margin:0px;
+}
+#post_form span.error {
+	color:red;
+	font-size:9px;
+	padding-left: 15px;
+}
+/* Linkjes kleur in Leeftijd filter */
+div.f8_navigatie_links a{
+	color:#FFFFFF;
+}
+/* Lees verder link gewoon zwart */
+div.xopus_content a.readmore{
+  color:#404141;
+}
+/* Jaaropgave */
+.pagewrapper form fieldset select {
+margin-top:0.5em;
+}
+#jaaropgave_form span.error {
+	color:red;
+	font-size:9px;
+}
+/* Sitemap */
+div.f23_sitemap {
+	padding-left: 20px;
+}
+div.f23_sitemap li.sitemap_parent {
+	background: none;
+	color: #FF6700;
+}
+div.f23_sitemap ul  {
+	list-style-type: none;
+}
+div.f23_sitemap ul li, div.f23_sitemap ul li ul li , div.f23_sitemap ul li ul li ul li  {
+	background:transparent url(/pls/portal/docs/PAGE/pme/Beheer/img/rightcol_listitem.png) no-repeat scroll 0 8px;
+}
+div.f23_sitemap ul li.sitemap_parent span {
+  cursor: pointer ;
+}
+#cse-search-results {
+	width: 522px;
+}
+/* Veelgestelde vragen */
+/* ZJH PME Release fix voor FAQ in en uitklappen */
+div#f16_faq_doelgroep{
+	padding-bottom: 1px;
+	overflow:hidden;
+	/*width: 520px;*/
+	margin-bottom: 2px;
+}
+div#f16_faq_doelgroep dd a {
+  color: #005D8C;
+  font-weight: bold;
+  overflow:hidden;
+}
+div#f16_faq{
+	padding-bottom: 1px;
+}
+div#f16_faq dd a {
+  color: #005D8C;
+  font-weight: bold;
+}
+#carousel_slides {
+	list-style-type: circle;
+	list-style: circle;
+}
+/* Caroussel witte vlak change */
+#carousel_slides li div {
+	background-color: #fff;
+	opacity: 0.9;
+	position: absolute;
+	/* width: 360px; */
+	width: 38em;
+	height: 14.6em;
+	/*height: 160px;*/
+	padding: 15px 15px 0px 15px;
+	top: 96px;
+	left: 24px;
+    /*display: none;*/
+}
+#carousel_slides li {
+	list-style: none;	
+}
+
+/* Ruimte tussen Xopus m */
+div.xopus_content{
+	margin-right:20px;
+}
+/* Linkjes in Xopus content */
+div.xopus_content a {
+  color:#005D8C;
+  font-weight:bold;
+}
+.pagewrapper .backlink {
+  color:#005D8C;
+  font-weight:bold;
+}
+/* Splashpage buttons hebben nu een vaste breedte */
+div.f4_doelgroep-box a.button span.middle {
+  width: 150px;
+}
+div.f4_doelgroep-box {
+	margin-bottom: 6px;
+}  
+/* Splashpage ruimte tussen image + teksten */
+div.f3_splash-box {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+div.f1_header {
+	margin-bottom: 10px;
+}
+/* Ruimte tussen Logo en Niveau 1 menu verkleinen */
+div.f1_header ul.h1nav {
+  margin: 10px 0 0.2em;
+}
+div.f2_footer {
+  margin-top: 2px;
+}
+div.f2_footer ul {
+  margin: 2px;
+}
+div.f8_navigatie_links {
+  margin-right: 2px;
+  width: 15.5em;
+  /*width: 177px;*/
+  /*word-wrap: break-word;*/
+}
+div.f8_navigatie_links ul li {
+  line-height:20px;
+}
+div.f8_navigatie_links ul li.actsub a,
+div.f8_navigatie_links ul li.actsub a:hover,
+div.f8_navigatie_links ul li.act a,
+div.f8_navigatie_links ul li.act a:hover,
+div.f8_navigatie_links ul li a:hover,
+div.f8_navigatie_links ul li.sub ul li.act a,
+div.f8_navigatie_links ul li.sub ul li.act a:hover,
+div.f8_navigatie_links ul li.sub ul li a:hover {
+	background-position: 14em -42px;
+	padding-right: 4em;
+}
+div.f8_navigatie_links ul li.actsub a,
+div.f8_navigatie_links ul li.sub a:hover {
+	background-position: 14em 8px;
+}
+/* Centreren Lees verder buttons caroussel */
+#carousel_slides a.button span.middle {
+  padding: 8px 0 0;
+}
+/* Error message Pensioenconsulenten */
+#f26_consulent span.error {
+  color:red;
+  font-size:9px;
+  margin-left: 8px;
+}
+/* Kruimelpad voorzien van een achtergrond kleur */
+div.f1_header ul.kruimelpad {
+	background-color: #f4f4f4;
+}
+/* Wolk button */
+div.f1_header ul.secnav   {
+  margin: 0px;
+}
+div.f1_header ul.secnav li.topmenu {
+  display: block;
+  float: left;
+  height: 3em;
+  margin-right: 3px;
+  padding: 0px;
+}
+div.f1_header ul.secnav li.contactbutton {
+  line-height: 1.7em;
+}
+div.f1_header ul.secnav li.tekst {
+  line-height: 2.7em;
+}
+a.ctbutton {
+	padding: 0;
+	color: #ffffff;
+	text-decoration: none;
+	display: inline-block;
+}
+a.ctbutton:hover {
+	text-decoration: none;
+}	
+a.ctbutton span {
+	background-image: url(/pls/portal/docs/PAGE/pme/Beheer/img/bg_button.png);
+	background-repeat: no-repeat;
+	width: 14px;
+	height: 30px;
+	float: left;
+	cursor: pointer;
+	overflow: hidden;
+}
+a.ctbutton span.leftcap {
+	background-position: 0 0;
+}
+a.ctbutton span.rightcap {
+	background-position: 0 -79px;
+}
+a.ctbutton span.middle {
+	background-position: 0 -39px;
+	background-repeat: repeat-x;
+	white-space: nowrap;
+	width: auto;
+	padding: 5px 0 0;
+	height: 30px;
+	font-weight: bold;
+}
+a.ctbutton:hover span.leftcap {
+	background-position: 0 -118px;
+}
+a.ctbutton:hover span.rightcap {
+	background-position: 0 -197px;
+}
+a.ctbutton:hover span.middle {
+	background-position: 0 -157px;
+}
+a.download_links {
+	color: #dba565;
+	font-size: 12px;
+	line-height: 1.2em;
+	zoom:1;
+}
+div.bestellijst {
+	width: 570px;
+}
+a.bestellijst {
+	color: #2d5b6f;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: underline;
+	float: right;
+	padding-right: 10px;
+	/*display: none;*/
+}
+a.downloads {
+	color: #2d5b6f;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: underline;
+	float: right;
+	display: none;
+}
+input.checkbox {
+	/*float: right;
+	margin-left: 10px;
+	margin-right: 10px;*/
+}
+#logo {
+  display: none;
+}
+div.download_title {
+	float: left;
+	/*margin-top: 5px;*/
+	margin-left: 11px;
+	width: 450px;
+}
+div.download_title div p{
+	line-height: 1.2em;
+	margin-bottom: 0px;
+}
+div.download_image {
+	float: left;
+	margin-left: 10px;
+}
+div.download_image img{
+	padding: 0;	
+	margin: 0;
+}
+div.download_separator {
+  background:url("/pls/portal/docs/PAGE/pme/Beheer/img/bg_form_title.png") repeat scroll 0 0 transparent;
+  color:#18485B;
+  /*padding-top: 1px;
+  padding-bottom: 5px;*/
+  height: 17px;
+  text-align: right;
+  /*position: relative;*/
+  width: 710px;
+}
+div.download_separator_inner {
+  padding-right: 5px;
+  vertical-align: middle;
+  position: relative;
+  top: -10%;
+  width: 700px;
+}
+div.download_separator_inner:checked {
+  padding-right: 5px;
+	vertical-align: middle;
+	position: relative;
+	top: -10%;
+}
+div.download_separator_inner input{
+	vertical-align: middle;
+}
+li.download_li p{	
+	margin: 0;
+	float: left;
+	padding-top: 3px;
+}
+ul.download_ul {	
+	display: none;
+	width: 730px;
+}
+ul#pg_tab {
+	list-style-type: none;	
+}
+div.f17_downloads div.items {
+  width: 730px;
+  position: absolute;
+  display: block;
+}
+div.f17_downloads {
+  width: 730px;
+  overflow:	hidden;
+}
+div.f17_downloads_skewed {
+  width: 502px;
+  overflow:	hidden;
+}
+	
+div.f17_downloads_skewed div.tabcontent>ul {
+  margin: 0 0 1em 0;
+}
+
+div.f17_downloads_skewed div.tabcontent>ul>li,
+div.f17_downloads_skewed div.tabcontent>form ul>li {
+	padding: 0;
+	background: none;
+	overflow: hidden;    
+}
+
+div.f17_downloads_skewed div.tabcontent>ul li span,
+div.f17_downloads_skewed div.tabcontent>ul li h3 {
+	color: #003145;
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+ul.pg_tab li.download_li {
+	padding-top: 15px;	
+	/* margin-left: 10px; */
+	list-style-type: none;
+	background: none;
+	width: 730px;
+}
+li.hide {
+	display: none;
+}
+div.f17_downloads div.tabcontainer {
+  width: 730px;
+}
+div.post_items {
+	border-bottom: 1px solid #b7b7b7;
+}
+div.col2_downloads {
+  width: 730px;	
+}
+div#downloadHit {
+	display: none;
+}
+div#downloadTabs {
+	overflow:	hidden;
+	width: 		100%;
+	width: 		730px;
+}
+div#tabContainer.tabcontent1 {
+	display: 	block;
+	top: 		40px; 
+}
+div.download_delete {
+	width: 		20px;
+	float: 		right; 
+}
+img.download_delete {
+	display: 	block;
+}
+div.download_amount {
+	display: 	none;
+	width: 		45px;
+	float: 		right; 
+}
+#f16_faq dl dt {
+	padding-left: 10px;
+	margin: 0 0 1em;
+	line-height: 1.3em;
+	background: transparent url(/pls/portal/docs/PAGE/pme/Beheer/img/rightcol_listitem.png) no-repeat scroll left 0.6em;
+}
+#f16_faq dl dd {
+  padding-left: 20px;
+}

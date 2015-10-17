@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd   
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- holding properties for database connectivity / -->
+	<context:component-scan base-package="com.survey" />
+
+	<!-- enabling annotation driven configuration / -->
+	<context:annotation-config />
+	
+	<mvc:annotation-driven />
+    
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**/*"/>
+            <bean id="webContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+                <property name="cacheSeconds" value="0"/>
+                <property name="useExpiresHeader" value="true"/>
+                <property name="useCacheControlHeader" value="true"/>
+                <property name="useCacheControlNoStore" value="true"/>
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+    	<property name="cacheSeconds" value="0" />
+	</bean>
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/surveydb"/>
+		<property name="username" value="root"/>
+		<property name="password" value="123"/>
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect"> org.hibernate.dialect.MySQLDialect </prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>         
+				<prop key="hibernate.query.factory_class">${hibernate.query_factory_class}</prop>       
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+			</props>
+		</property>
+		
+		<property name="mappingResources">
+			<list>
+				<value>com/survey/hibernate/model/hbm/User.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/QuestionChoice.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Role.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/UserAnswer.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/QuestionType.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Answer.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/QuestionGroup.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Survey.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Question.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Questionnaire.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Property.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Target.hbm.xml</value>				
+				<value>com/survey/hibernate/model/hbm/TargetQuestionnaire.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Template.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Asset.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/TargetType.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Section.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Attribute.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Status.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/TemplateSection.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/SectionAttribute.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/Campaign.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/TargetTypeStatus.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/AssetAttribute.hbm.xml</value>
+				<value>com/survey/hibernate/model/hbm/UserCampaign.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userDao" class="com.survey.dao.UserDaoImpl">
+		 <property name="sessionFactory" ref="sessionFactory"/>
+	</bean>		
+	<bean id="roleDao" class="com.survey.dao.RoleDaoImpl">
+	 	<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>	
+	<bean id="TemplateDAO" class="com.survey.dao.TemplateDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="AssetDAO" class="com.survey.dao.AssetDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="TargetTypeDAO" class="com.survey.dao.TargetTypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="SectionDAO" class="com.survey.dao.SectionDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="AttributeDAO" class="com.survey.dao.AttributeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="StatusDAO" class="com.survey.dao.StatusDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TemplateSectionDAO" class="com.survey.dao.TemplateSectionDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SectionAttributeDAO" class="com.survey.dao.SectionAttributeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="TargetQuestionnaireDAO" class="com.survey.dao.TargetQuestionnaireWDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="CampaignDAO" class="com.survey.dao.CampaignDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TargetTypeStatusDAO" class="com.survey.dao.TargetTypeStatusDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>		
+	<bean id="AssetAttributeDAO" class="com.survey.dao.AssetAttributeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserCampaignDAO" class="com.survey.dao.UserCampaignDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="QuestionDAO" class="com.survey.dao.QuestionDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="QuestionnaireDAO" class="com.survey.dao.QuestionnaireDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="QuestionGroupDAO" class="com.survey.dao.QuestionGroupDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AnswerDAO" class="com.survey.dao.AnswerDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserAnswerDAO" class="com.survey.dao.UserAnswerDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>
